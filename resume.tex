@@ -1,0 +1,212 @@
+%-------------------------
+% CV in LaTeX
+% Author : Sam Ritchie (Adapted from https://github.com/sb2nov/resume)
+% License : MIT
+% pdflatex resume.tex
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{\item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Link with italicized content.
+\newcommand{\itlink}[2]{
+  \href{#1}{\textit{#2}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item[]\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+% CV Starts Here. %
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://samritchie.io/}{\Large Sam Ritchie}} & \href{mailto:sam@mentat.org}{sam@mentat.org}\\
+  \href{https://samritchie.io}{https://samritchie.io} & Mobile: +1.703.863.8561 \\
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading{Princeton University}{Princeton, NJ}{
+  BSE in Mechanical and Aerospace Engineering}{Sep 2005 - Jun 2009}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Recent Work Experience}
+\resumeSubHeadingListStart
+\resumeSubheading{Mentat Collective}{Boulder, CO}{
+  Principal Researcher}{Jan 2021 - Present}
+\resumeItemListStart
+\resumeItem{Emmy Computer Algebra System}{
+  \href{https://github.com/mentat-collective/emmy}{Emmy} is a Clojure(Script) computer algebra system designed for math and physics investigation. The library ships with a collection of viewers that make it possible to author and publish interactive, executable articles, posts and books with embedded simulations.}
+\resumeItemListEnd
+
+\resumeSubheading{Alphabet X}{Mountain View, CA}{
+  Research Engineer, Blueshift}{Oct 2019 - Jan 2021}
+\resumeItemListStart
+\resumeItem{Caliban}{
+  Designed and implemented \href{https://github.com/google/caliban}{Caliban}, a tool that makes it trivial for researchers to scale their experiments from a local script to running code on thousands of GPU-enabled Cloud machines. Caliban has reduced the time it takes a researcher to become productive from 3 weeks to 1 hour, a 2-order-of-magnitude speedup.}
+\resumeItem{Blueshift Research Archive}{
+  Designed and implemented UV, a metric reporting framework that forms the core of a suite of tools designed to solve the problem of collecting vast amounts of data during thousands of machine learning experiments and synthesizing them down into world-class research papers. Led the design of the rest of this suite, called the Blueshift Research Archive.}
+\resumeItemListEnd
+
+\resumeSubheading{Stripe, Inc}{San Francisco, CA}{
+  Senior Software Engineer, Machine Learning Infrastructure}{Jan 2016 - June 2018}
+\resumeItemListStart
+\resumeItem{Semblance}{
+  Extended Summingbird into a system that accepts a user's declarative description of a machine learning feature and computes it in both batch and realtime with sub-100 millisecond latency for use in training and scoring machine learning models.}
+\resumeItem{Machine Learning Workflow Manager}{
+  Designed Stripe's core machine learning feature generation, model training, deployment and evaluation workflow and implemented many of the components. This system currently powers all machine learning applications at Stripe (fraud detection via Radar, customer risk evaluation, etc).}
+\resumeItem{Machine Learning Explanations}{
+  Contributed to the development of a state-of-the-art technique to generate explanations of the predictions of Stripe's "black box" fraud models with millisecond latency. Presented this work at \href{https://www.youtube.com/watch?v=DiWkKqZChF0}{Strange Loop} and on the \href{https://twimlai.com/twiml-talk-73-exploring-black-box-predictions-sam-ritchie/}{TWiML\&AI Podcast.}}
+\resumeItemListEnd
+
+\resumeSubheading{PaddleGuru}{Boulder, CO}{
+  Founder, Lead Developer}{Jan 2014 - Oct 2016}
+\resumeItemListStart
+\resumeItem{PaddleGuru}{
+  \href{https://paddleguru.com}{PaddleGuru.com} is an athletic timing, registration and payment processing platform used by thousands of athletic competitions. The system is full-stack Clojure, with a React-based Clojurescript front-end that communicates via websocket with a Clojure backend running on Dokku. PaddleGuru may be the techiest product in this space, for better or for worse.}
+\resumeItem{Open Source}{
+  Released a number of successful open-source front end libraries, including \href{https://github.com/racehub/om-bootstrap}{Om-Bootstrap} and wrappers around \href{https://github.com/racehub/stripe-clj}{Stripe}, \href{https://github.com/racehub/mandrill-clj}{Mandrill} and a number of other web development services.}
+\resumeItemListEnd
+
+\resumeSubheading{Twitter}{San Francisco, CA}{
+  Senior Software Engineer, Platform Engineering}{Dec 2011 - Nov 2013}
+\resumeItemListStart
+\resumeItem{Summingbird}{
+  Developed and released \href{https://github.com/twitter/summingbird}{Summingbird}, a MapReduce platform written in Scala that powers the majority of Twitter's realtime analytics workflows. I was \href{https://www.wired.com/2013/11/twitter-summingbird/}{profiled in Wired magazine} for this work. Summingbird is open-source and is one of the most popular streaming MapReduce platforms (2k+ GitHub stars, dozens of corporate users).}
+\resumeItem{Streaming Infrastructure}{
+  Deployed and maintained production code on dozens of Hadoop and Storm based applications at the core of Twitter's analytics products, internal and external.}
+\resumeItem{Revenue Team}{
+  Worked on and deployed Twitter's first generation advertiser analytics dashboard. A later Summingbird implementation reduced the number of machines required to run this system from 80 to 5, and the number of humans from 8 to 1.}
+\resumeItemListEnd
+
+\resumeSubheading{REDD Metrics}{Philadelphia, PA}{
+  Lead Developer}{June 2010 - Sep 2011}
+\resumeItemListStart
+\resumeItem{Global Forest Watch}{
+  Designed and built a globe-scale deforestation monitoring and prediction system (\href{https://www.wri.org/blog/2014/03/forma-near-real-time-alert-system-tropical-forest-loss}{FORMA}) with the support of the World Bank and the World Resources Institute. FORMA is the foundation for WRI's \href{https://www.globalforestwatch.org}{Global Forest Watch} product. It trains on, and applies classification algorithms to, terabytes of NASA MODIS satellite data using a Clojure workflow built on Apache Hadoop. FORMA's scale and stability was unprecedented in the deforestation monitoring community when we launched in 2011.
+}
+\resumeItem{Open Source}{During this work I became a committer or maintainer of many of the leading Hadoop data processing libraries, including Cascalog, Cascading, Scalding and Pallet. I released a cloud-agnostic provisioning tool called \href{https://github.com/pallet/pallet-hadoop}{Pallet-Hadoop} that deploys and manages the hundreds of machines required to process satellite data at scale.}
+\resumeItemListEnd
+
+\resumeSubheading{ThinkFun, Inc}{Alexandria, VA}{
+  Digital Projects Director, Lead Developer}{Apr 2009 - Sep 2011}
+\resumeItemListStart
+\resumeItem{Digital Games}{Developed an interactive suite of successful (\$150K+ revenue/yr) iPhone and Android applications based on ThinkFun's mechanical brainteaser puzzle line; Rush Hour alone has amassed millions of downloads. Worked with schools around the country to develop a creative problem-solving curriculum called "Brainlab" based on these brainteaser puzzles.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Notable Projects}
+\resumeSubHeadingListStart
+\resumeSubItem{Summingbird}{
+  Summingbird was the first Lambda architecture implementation. The library lets you write MapReduce programs that look like native Scala or Java collection transformations; Summingbird generates code from these programs that can run on Hadoop, Storm, or Spark alone or in a hybrid batch/realtime mode that offers your application very attractive fault-tolerance properties. This work resulted in a \href{http://www.vldb.org/pvldb/vol7/p1441-boykin.pdf}{paper accepted at VLDB 2014.}}
+\resumeSubItem{Algebird}{
+  Algebird is Scala's abstract algebra library. Algebird was designed with streaming aggregations in mind, and implements a number of data structures and combinators that are useful in a streaming environment. The Monoid, for example, is a core concept of Summingbird. Algebird opened the door for large-scale deployments at Twitter of approximate data structures from the research world, notably the HyperLogLog and CountMinSketch.}
+\resumeSubItem{Bijection}{
+  Bijection is an implementation of invertible functions in Scala; the library allows for type-safe conversion between isomorphic data types spread across various Scala libraries. The interfaces in Bijection are foundational to Twitter and Stripe's Scala codebase, and to the other Scala projects referenced here.}
+\resumeSubItem{Chill}{
+  Chill provides a number of enhancements to the Kryo JVM serialization library; notably, serializers for all Scala primitives and collection types, and plugins that make it easy to use Kryo in Hadoop and Storm jobs. Scalding, Cascalog, Spark, Summingbird and many other projects use Chill to manage serialization across their various distributed system implementations.}
+\resumeSubItem{Cascalog}{
+Cascalog is a Datalog implementation in Clojure that compiles logic queries into Hadoop jobs. Cascalog powers dozens of companies, and powered Twitter's analytics dashboard until Summingbird deposed it. I've maintained Cascalog since late 2011 and authored many core features and modules, including midje-cascalog and cascalog-contrib.}
+
+\resumeSubItem{RV-10 Airplane Build}{
+  I'm 95\% through a build of a Vans Aircraft RV-10 4 seater airplane. The RV-10 is a single engine, fuel-injected aircraft with a cruising speed of 200mph, a service ceiling of 20,000'' and a range of 1000 miles. This project is my connection to my old life as an aerospace engineer.}
+\resumeSubItem{More Projects}{
+  You can find long-form descriptions of more of my work at \href{https://samritchie.io/projects/}{https://samritchie.io/projects}.
+}
+\resumeSubHeadingListEnd
+
+% --------PROGRAMMING SKILLS------------
+\section{Technical Skills}
+\resumeSubHeadingListStart
+\resumeSubItem{Languages}{
+  Fluent in Scheme, Clojure, ClojureScript, Python, Scala and Java, less so with JS, Haskell and R.}
+\resumeSubItem{Open Source}{
+  I'm a committer on Cascalog, Cascading, Scalding, Summingbird, and have developed lots of Scala and Clojure.}
+\resumeSubHeadingListEnd
+%-------------------------------------------
+
+% --------PROGRAMMING SKILLS------------
+\section{Talks and Publications}
+\begin{enumerate}
+  \resumeItem{The REPL Podcast}{\itlink{https://www.therepl.net/episodes/47/}{Executable Textbooks with Sam Ritchie, } 13 Jan 2023}
+  \resumeItem{re:Clojure 2020}{\itlink{https://www.youtube.com/watch?v=8AxMp0nfN7s}{Functional Physics \& the Preservation of Society, } 4 Dec 2020}
+  \resumeItem{CoRecursive Podcast}{\itlink{https://corecursive.com/050-sam-ritchie-portal-abstractions/}{Portal Abstractions with Sam Ritchie, } 4 Apr 2020}
+  \resumeItem{This Week in ML \& AI Podcast}{\itlink{https://twimlai.com/twiml-talk-73-exploring-black-box-predictions-sam-ritchie/}{Exploring Black Box Predictions,} 25 Nov 2017}
+  \resumeItem{Strange Loop 2017}{\itlink{https://www.youtube.com/watch?v=DiWkKqZChF0}{Just So Stories for AI: Explaining Black Box Predictions} (\href{https://speakerdeck.com/sritchie/just-so-stories-for-ai-explaining-black-box-predictions}{slides}), 28 Sep 2017}
+  \resumeItem{VLDB 2014}{\itlink{http://www.vldb.org/pvldb/vol7/p1441-boykin.pdf}{Summingbird: A Framework for Integrating Batch and Online MapReduce Computations,} Sep 2014}
+  \resumeItem{Data Day Texas}{\itlink{https://speakerdeck.com/sritchie/the-road-to-summingbird-stream-processing-at-every-scale}{The Road to Summingbird: Stream Processing at Every Scale,} Jan 2014}
+  \resumeItem{Wired Magazine}{\itlink{http://www.wired.com/wiredenterprise/2013/11/twitter-summingbird/}{How the Nephew of Computer Science Royalty Remade Twitter,} Nov 2013}
+  \resumeItem{Clojure/Conj 2013}{\itlink{http://www.youtube.com/watch?v=uuJW3EaN_3Q}{Cascalog 2.0: Datalog in Realtime}(\href{https://speakerdeck.com/sritchie/cascalog-2-dot-0-datalog-in-realtime}{slides}), Nov 2013}
+  \resumeItem{PNW Scala 2013}{\itlink{http://www.youtube.com/watch?v=iuvauJZaMqA}{Taking Hadoop Realtime with Summingbird,} Sep 2013}
+  \resumeItem{Boston Storm Users}{\itlink{https://vimeo.com/75516079}{Summingbird, Scala \& Storm}(\href{https://speakerdeck.com/sritchie/boston-storm-users-summingbird-scala-and-storm}{slides}), Sep 2013}
+  \resumeItem{CUFP 2013}{\itlink{https://speakerdeck.com/sritchie/summingbird-at-cufp}{Realtime MapReduce at Twitter,} Sep 2013}
+  \resumeItem{Bay Area Storm Users}{\itlink{http://www.youtube.com/watch?v=23scdoxHOLg}{Introduction to Summingbird} (w/ Oscar Boykin), Sep 2013}
+  \resumeItem{GigaOm}{\itlink{http://gigaom.com/2013/09/03/twitter-open-sources-storm-hadoop-hybrid-called-summingbird/}{Twitter Open Sources Summingbird,} Sep 2013}
+  \resumeItem{Twitter Eng Blog}{\itlink{https://blog.twitter.com/2013/streaming-mapreduce-with-summingbird}{Streaming MapReduce with Summingbird,} Sep 2013}
+  \resumeItem{AK Data Summit}{\itlink{http://www.youtube.com/watch?v=Y3PETLJeP7o}{Summingbird: Streaming MapReduce at Twitter}(\href{https://speakerdeck.com/sritchie/summingbird-streaming-mapreduce-at-twitter}{slides}), Jun 2013}
+\end{enumerate}
+
+%-------------------------------------------
+
+\end{document}
